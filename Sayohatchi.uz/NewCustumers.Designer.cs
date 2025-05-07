@@ -39,10 +39,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,17 +138,6 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 0);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(83, 29);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Erkak";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
@@ -160,6 +148,17 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Ayol";
             this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 0);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(83, 29);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Erkak";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -173,24 +172,11 @@
             this.button1.Text = "Qo\'shish";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(554, 369);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 36);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Ortga";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // NewCustumers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 581);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
@@ -231,6 +217,5 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
     }
 }

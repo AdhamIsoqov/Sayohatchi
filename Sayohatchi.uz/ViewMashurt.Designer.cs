@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,18 +48,6 @@
             this.label1.Size = new System.Drawing.Size(343, 38);
             this.label1.TabIndex = 15;
             this.label1.Text = "Sayohatchilarni ko\'rish";
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(761, 517);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 48);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Ortga";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
@@ -119,13 +106,13 @@
             this.Column1.HeaderText = "O\'chirish";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
             // 
             // ViewMashurt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 581);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -142,7 +129,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

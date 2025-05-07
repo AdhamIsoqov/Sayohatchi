@@ -41,7 +41,6 @@
             this.FISHtxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -161,18 +160,6 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "Sayohatchini yangilash";
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(572, 385);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 36);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "Ortga";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DarkBlue;
@@ -201,7 +188,6 @@
             this.Controls.Add(this.FISHtxt);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -230,7 +216,6 @@
         private System.Windows.Forms.TextBox FISHtxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
     }
 }

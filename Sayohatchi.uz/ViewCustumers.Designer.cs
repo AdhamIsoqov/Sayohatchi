@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,18 +65,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(861, 431);
             this.dataGridView1.TabIndex = 15;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(759, 521);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 48);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "Ortga";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // Column2
             // 
@@ -126,7 +113,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 581);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -144,7 +130,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
