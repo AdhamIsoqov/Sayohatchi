@@ -28,22 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.TripName = new System.Windows.Forms.ComboBox();
+            this.TravelersFISH = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CostsDataGridView = new System.Windows.Forms.DataGridView();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.TripsBudget = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.ExpenseAmount = new System.Windows.Forms.Label();
+            this.DeleteCostBtn = new System.Windows.Forms.Button();
+            this.UpdateCostBtn = new System.Windows.Forms.Button();
+            this.AddNewCostBtn = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.refreshTimer = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.CostsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -65,21 +74,23 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "Sayohat nomi";
             // 
-            // comboBox1
+            // TripName
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(216, 110);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(247, 33);
-            this.comboBox1.TabIndex = 18;
+            this.TripName.FormattingEnabled = true;
+            this.TripName.Location = new System.Drawing.Point(216, 110);
+            this.TripName.Name = "TripName";
+            this.TripName.Size = new System.Drawing.Size(247, 33);
+            this.TripName.TabIndex = 18;
+            this.TripName.SelectedIndexChanged += new System.EventHandler(this.TripName_SelectedIndexChanged);
             // 
-            // comboBox2
+            // TravelersFISH
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(633, 113);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(247, 33);
-            this.comboBox2.TabIndex = 20;
+            this.TravelersFISH.FormattingEnabled = true;
+            this.TravelersFISH.Location = new System.Drawing.Point(633, 113);
+            this.TravelersFISH.Name = "TravelersFISH";
+            this.TravelersFISH.Size = new System.Drawing.Size(247, 33);
+            this.TravelersFISH.TabIndex = 20;
+            this.TravelersFISH.SelectedIndexChanged += new System.EventHandler(this.TravelersFISH_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -90,25 +101,41 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Sayohatchi ismi";
             // 
-            // dataGridView1
+            // CostsDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CostsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CostsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column3,
+            this.Column4,
             this.Column1,
             this.Column2});
-            this.dataGridView1.Location = new System.Drawing.Point(66, 156);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(814, 316);
-            this.dataGridView1.TabIndex = 21;
+            this.CostsDataGridView.Location = new System.Drawing.Point(66, 156);
+            this.CostsDataGridView.Name = "CostsDataGridView";
+            this.CostsDataGridView.RowHeadersWidth = 51;
+            this.CostsDataGridView.RowTemplate.Height = 24;
+            this.CostsDataGridView.Size = new System.Drawing.Size(814, 259);
+            this.CostsDataGridView.TabIndex = 21;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Sayohat nomi";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 225;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Sayohatchi ismi";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 225;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "Xarajat Nomi";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 585;
+            this.Column1.Width = 385;
             // 
             // Column2
             // 
@@ -126,14 +153,14 @@
             this.label4.TabIndex = 22;
             this.label4.Text = "Byujet :";
             // 
-            // label5
+            // TripsBudget
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(133, 484);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 25);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "null";
+            this.TripsBudget.AutoSize = true;
+            this.TripsBudget.Location = new System.Drawing.Point(133, 484);
+            this.TripsBudget.Name = "TripsBudget";
+            this.TripsBudget.Size = new System.Drawing.Size(42, 25);
+            this.TripsBudget.TabIndex = 23;
+            this.TripsBudget.Text = "null";
             // 
             // label6
             // 
@@ -144,68 +171,104 @@
             this.label6.TabIndex = 24;
             this.label6.Text = "Xarajatlar : ";
             // 
+            // ExpenseAmount
+            // 
+            this.ExpenseAmount.AutoSize = true;
+            this.ExpenseAmount.Location = new System.Drawing.Point(354, 484);
+            this.ExpenseAmount.Name = "ExpenseAmount";
+            this.ExpenseAmount.Size = new System.Drawing.Size(42, 25);
+            this.ExpenseAmount.TabIndex = 25;
+            this.ExpenseAmount.Text = "null";
+            // 
+            // DeleteCostBtn
+            // 
+            this.DeleteCostBtn.BackColor = System.Drawing.Color.DarkRed;
+            this.DeleteCostBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteCostBtn.ForeColor = System.Drawing.Color.White;
+            this.DeleteCostBtn.Location = new System.Drawing.Point(755, 478);
+            this.DeleteCostBtn.Name = "DeleteCostBtn";
+            this.DeleteCostBtn.Size = new System.Drawing.Size(125, 36);
+            this.DeleteCostBtn.TabIndex = 38;
+            this.DeleteCostBtn.Text = "O\'chirish";
+            this.DeleteCostBtn.UseVisualStyleBackColor = false;
+            // 
+            // UpdateCostBtn
+            // 
+            this.UpdateCostBtn.BackColor = System.Drawing.Color.DarkBlue;
+            this.UpdateCostBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateCostBtn.ForeColor = System.Drawing.Color.White;
+            this.UpdateCostBtn.Location = new System.Drawing.Point(624, 478);
+            this.UpdateCostBtn.Name = "UpdateCostBtn";
+            this.UpdateCostBtn.Size = new System.Drawing.Size(125, 36);
+            this.UpdateCostBtn.TabIndex = 40;
+            this.UpdateCostBtn.Text = "Yangilash";
+            this.UpdateCostBtn.UseVisualStyleBackColor = false;
+            // 
+            // AddNewCostBtn
+            // 
+            this.AddNewCostBtn.BackColor = System.Drawing.Color.DarkGreen;
+            this.AddNewCostBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddNewCostBtn.ForeColor = System.Drawing.Color.White;
+            this.AddNewCostBtn.Location = new System.Drawing.Point(493, 478);
+            this.AddNewCostBtn.Name = "AddNewCostBtn";
+            this.AddNewCostBtn.Size = new System.Drawing.Size(125, 36);
+            this.AddNewCostBtn.TabIndex = 41;
+            this.AddNewCostBtn.Text = "Qo\'shish";
+            this.AddNewCostBtn.UseVisualStyleBackColor = false;
+            this.AddNewCostBtn.Click += new System.EventHandler(this.AddNewCostBtn_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(61, 439);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(121, 25);
+            this.label5.TabIndex = 42;
+            this.label5.Text = "Xarajat nomi";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(354, 484);
+            this.label7.Location = new System.Drawing.Point(478, 439);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 25);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "null";
+            this.label7.Size = new System.Drawing.Size(157, 25);
+            this.label7.TabIndex = 43;
+            this.label7.Text = "Xarajat summasi";
             // 
-            // button1
+            // textBox1
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkRed;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(796, 478);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 36);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "D";
-            this.button1.UseVisualStyleBackColor = false;
+            this.textBox1.Location = new System.Drawing.Point(199, 439);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(264, 30);
+            this.textBox1.TabIndex = 44;
             // 
-            // button3
+            // numericUpDown1
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkBlue;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(706, 478);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 36);
-            this.button3.TabIndex = 40;
-            this.button3.Text = "U";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.DarkGreen;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(616, 478);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(84, 36);
-            this.button4.TabIndex = 41;
-            this.button4.Text = "A";
-            this.button4.UseVisualStyleBackColor = false;
+            this.numericUpDown1.Location = new System.Drawing.Point(633, 437);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(247, 30);
+            this.numericUpDown1.TabIndex = 45;
             // 
             // NewCosts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 581);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.AddNewCostBtn);
+            this.Controls.Add(this.UpdateCostBtn);
+            this.Controls.Add(this.DeleteCostBtn);
+            this.Controls.Add(this.ExpenseAmount);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.TripsBudget);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.CostsDataGridView);
+            this.Controls.Add(this.TravelersFISH);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.TripName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -214,7 +277,8 @@
             this.Name = "NewCosts";
             this.Text = "NewCosts";
             this.Load += new System.EventHandler(this.NewCosts_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CostsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,18 +288,25 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox TripName;
+        private System.Windows.Forms.ComboBox TravelersFISH;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView CostsDataGridView;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label TripsBudget;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label ExpenseAmount;
+        private System.Windows.Forms.Button DeleteCostBtn;
+        private System.Windows.Forms.Button UpdateCostBtn;
+        private System.Windows.Forms.Button AddNewCostBtn;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Timer refreshTimer;
     }
 }

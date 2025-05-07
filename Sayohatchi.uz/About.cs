@@ -18,7 +18,7 @@ namespace Sayohatchi.uz
         {
             InitializeComponent();
         }
-
+        string conn = ConfigurationManager.ConnectionStrings["DataBaseConn"].ConnectionString;
         private void About_Load(object sender, EventArgs e)
         {
             try

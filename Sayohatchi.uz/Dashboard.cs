@@ -18,9 +18,22 @@ namespace Sayohatchi.uz
         {
             InitializeComponent();
         }
-
-
-
+        string conn = ConfigurationManager.ConnectionStrings["DataBaseConn"].ConnectionString;
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(conn))
+                {
+                    connection.Open();
+                    MessageBox.Show("Ulanish muvaffaqiyatli!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ulanishda xato: " + ex.Message);
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             NewCustumers frm = new NewCustumers();
@@ -119,24 +132,6 @@ namespace Sayohatchi.uz
             panel3.Controls.Add(frm);
             frm.BringToFront();
             frm.Show();
-        }
-
-        private void Dashboard_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                string connectionString = ConfigurationManager.ConnectionStrings["DataBaseConn"].ConnectionString;
-
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    MessageBox.Show("Ulanish muvaffaqiyatli!");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ulanishda xato: " + ex.Message);
-            }
         }
     }
 }

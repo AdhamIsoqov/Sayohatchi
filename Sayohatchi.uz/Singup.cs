@@ -18,7 +18,7 @@ namespace Sayohatchi.uz
         {
             InitializeComponent();
         }
-
+        string conn = ConfigurationManager.ConnectionStrings["DataBaseConn"].ConnectionString;
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
@@ -43,9 +43,7 @@ namespace Sayohatchi.uz
         {
             try
             {
-                string connectionString = ConfigurationManager.ConnectionStrings["DataBaseConn"].ConnectionString;
-
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(conn))
                 {
                     connection.Open();
                     MessageBox.Show("Ulanish muvaffaqiyatli!");

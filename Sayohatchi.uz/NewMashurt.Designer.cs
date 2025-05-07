@@ -31,13 +31,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.StartDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.TripNametxt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.EndDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.AddTripBtn = new System.Windows.Forms.Button();
+            this.BudgetNumeric = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.BudgetNumeric)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -68,19 +69,19 @@
             this.label3.TabIndex = 18;
             this.label3.Text = "Boshlanish sanasi";
             // 
-            // dateTimePicker1
+            // StartDateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(399, 219);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(274, 30);
-            this.dateTimePicker1.TabIndex = 19;
+            this.StartDateTimePicker.Location = new System.Drawing.Point(399, 219);
+            this.StartDateTimePicker.Name = "StartDateTimePicker";
+            this.StartDateTimePicker.Size = new System.Drawing.Size(274, 30);
+            this.StartDateTimePicker.TabIndex = 19;
             // 
-            // textBox1
+            // TripNametxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(399, 183);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(274, 30);
-            this.textBox1.TabIndex = 20;
+            this.TripNametxt.Location = new System.Drawing.Point(399, 183);
+            this.TripNametxt.Name = "TripNametxt";
+            this.TripNametxt.Size = new System.Drawing.Size(274, 30);
+            this.TripNametxt.TabIndex = 20;
             // 
             // label4
             // 
@@ -91,12 +92,12 @@
             this.label4.TabIndex = 21;
             this.label4.Text = "Tugash sanasi";
             // 
-            // dateTimePicker2
+            // EndDateTimePicker
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(399, 261);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(274, 30);
-            this.dateTimePicker2.TabIndex = 22;
+            this.EndDateTimePicker.Location = new System.Drawing.Point(399, 261);
+            this.EndDateTimePicker.Name = "EndDateTimePicker";
+            this.EndDateTimePicker.Size = new System.Drawing.Size(274, 30);
+            this.EndDateTimePicker.TabIndex = 22;
             // 
             // label5
             // 
@@ -107,37 +108,53 @@
             this.label5.TabIndex = 23;
             this.label5.Text = "Byujet summasi";
             // 
-            // textBox2
+            // AddTripBtn
             // 
-            this.textBox2.Location = new System.Drawing.Point(399, 297);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(274, 30);
-            this.textBox2.TabIndex = 24;
+            this.AddTripBtn.BackColor = System.Drawing.Color.DarkGreen;
+            this.AddTripBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddTripBtn.ForeColor = System.Drawing.Color.White;
+            this.AddTripBtn.Location = new System.Drawing.Point(336, 362);
+            this.AddTripBtn.Name = "AddTripBtn";
+            this.AddTripBtn.Size = new System.Drawing.Size(134, 36);
+            this.AddTripBtn.TabIndex = 25;
+            this.AddTripBtn.Text = "Qo\'shish";
+            this.AddTripBtn.UseVisualStyleBackColor = false;
+            this.AddTripBtn.Click += new System.EventHandler(this.AddTripBtn_Click);
             // 
-            // button1
+            // BudgetNumeric
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(336, 362);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 36);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Qo\'shish";
-            this.button1.UseVisualStyleBackColor = false;
+            this.BudgetNumeric.Location = new System.Drawing.Point(399, 298);
+            this.BudgetNumeric.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.BudgetNumeric.Minimum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.BudgetNumeric.Name = "BudgetNumeric";
+            this.BudgetNumeric.Size = new System.Drawing.Size(274, 30);
+            this.BudgetNumeric.TabIndex = 26;
+            this.BudgetNumeric.Value = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             // 
             // NewMashurt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 581);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.BudgetNumeric);
+            this.Controls.Add(this.AddTripBtn);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.EndDateTimePicker);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.TripNametxt);
+            this.Controls.Add(this.StartDateTimePicker);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -147,6 +164,7 @@
             this.Name = "NewMashurt";
             this.Text = "NewMashurt";
             this.Load += new System.EventHandler(this.NewMashurt_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.BudgetNumeric)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,12 +175,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker StartDateTimePicker;
+        private System.Windows.Forms.TextBox TripNametxt;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker EndDateTimePicker;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AddTripBtn;
+        private System.Windows.Forms.NumericUpDown BudgetNumeric;
     }
 }
