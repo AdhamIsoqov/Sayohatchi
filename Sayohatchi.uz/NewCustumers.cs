@@ -18,19 +18,55 @@ namespace Sayohatchi.uz
         {
             InitializeComponent();
         }
-
+        string conn = ConfigurationManager.ConnectionStrings["DataBaseConn"].ConnectionString;
         private void AddCustumersBtn_Click(object sender, EventArgs e)
         {
+            string fullName = FISHtxt.Text;
+            int age = (int)AgeTxtNumeric.Value;
+            string phoneNumber = Phonetxtmasked.Text;
+            string email = Emailtxt.Text;
+            string gender = radioButton1.Checked ? "Erkak" : "Ayol";
 
+            // Jadvalga qo'shish uchun SQL so'rovi
+            string insertQuery = "INSERT INTO [dbo].[travelers] (full_name, email, phone_number, gender) " +
+                                 "VALUES (@fullName, @email, @phoneNumber, @gender)";
+
+            // Ulanish va ma'lumotlarni qo'shish
+            try
+            {
+                string connectionString = conn;
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    SqlCommand command = new SqlCommand(insertQuery, connection);
+                    command.Parameters.AddWithValue("@fullName", fullName);
+                    command.Parameters.AddWithValue("@email", email);
+                    command.Parameters.AddWithValue("@phoneNumber", phoneNumber);
+                    command.Parameters.AddWithValue("@gender", gender);
+
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Mijoz muvaffaqiyatli qo'shildi!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Mijoz qo'shilishda xato yuz berdi.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Xato yuz berdi: " + ex.Message);
+            }
         }
 
         private void NewCustumers_Load(object sender, EventArgs e)
         {
             try
             {
-                string connectionString = ConfigurationManager.ConnectionStrings["DataBaseConn"].ConnectionString;
-
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(conn))
                 {
                     connection.Open();
                     MessageBox.Show("Ulanish muvaffaqiyatli!");
