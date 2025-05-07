@@ -53,9 +53,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(81, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 38);
+            this.label1.Size = new System.Drawing.Size(309, 38);
             this.label1.TabIndex = 16;
-            this.label1.Text = "Xarajat qo\'shish";
+            this.label1.Text = "Xarajatlarni qo\'shish";
             // 
             // label2
             // 
@@ -163,6 +163,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 36);
             this.button1.TabIndex = 38;
+            this.button1.Text = "D";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // button2
@@ -186,7 +187,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 36);
             this.button3.TabIndex = 40;
-            this.button3.Text = "Yangilash";
+            this.button3.Text = "U";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -199,7 +200,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(84, 36);
             this.button4.TabIndex = 41;
-            this.button4.Text = "Yangilash";
+            this.button4.Text = "A";
             this.button4.UseVisualStyleBackColor = false;
             // 
             // NewCosts
