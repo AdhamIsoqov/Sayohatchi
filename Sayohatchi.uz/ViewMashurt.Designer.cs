@@ -120,6 +120,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ViewMashurt";
             this.Text = "ViewMashurt";
+            this.Load += new System.EventHandler(this.ViewMashurt_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

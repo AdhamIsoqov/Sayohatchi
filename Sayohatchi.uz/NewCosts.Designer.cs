@@ -213,6 +213,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "NewCosts";
             this.Text = "NewCosts";
+            this.Load += new System.EventHandler(this.NewCosts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

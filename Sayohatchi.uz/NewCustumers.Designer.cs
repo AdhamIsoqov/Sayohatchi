@@ -151,6 +151,7 @@
             this.AddCustumersBtn.TabIndex = 11;
             this.AddCustumersBtn.Text = "Qo\'shish";
             this.AddCustumersBtn.UseVisualStyleBackColor = false;
+            this.AddCustumersBtn.Click += new System.EventHandler(this.AddCustumersBtn_Click);
             // 
             // AgeTxtNumeric
             // 
@@ -201,6 +202,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "NewCustumers";
             this.Text = "NewCustumers";
+            this.Load += new System.EventHandler(this.NewCustumers_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AgeTxtNumeric)).EndInit();

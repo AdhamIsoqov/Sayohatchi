@@ -194,6 +194,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UpdateCustumers";
             this.Text = "UpdateCustumers";
+            this.Load += new System.EventHandler(this.UpdateCustumers_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

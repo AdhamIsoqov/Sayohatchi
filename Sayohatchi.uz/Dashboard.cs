@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +18,8 @@ namespace Sayohatchi.uz
         {
             InitializeComponent();
         }
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -115,6 +119,24 @@ namespace Sayohatchi.uz
             panel3.Controls.Add(frm);
             frm.BringToFront();
             frm.Show();
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["DataBaseConn"].ConnectionString;
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    MessageBox.Show("Ulanish muvaffaqiyatli!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ulanishda xato: " + ex.Message);
+            }
         }
     }
 }

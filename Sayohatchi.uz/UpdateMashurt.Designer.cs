@@ -146,6 +146,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UpdateMashurt";
             this.Text = "UpdateMashurt";
+            this.Load += new System.EventHandler(this.UpdateMashurt_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
