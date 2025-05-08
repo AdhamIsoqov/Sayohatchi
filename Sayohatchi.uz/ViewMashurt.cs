@@ -63,7 +63,7 @@ namespace Sayohatchi.uz
                                 row.Cells["TripNameColumn"].Value = tripName;
                                 row.Cells["StartDateColumn"].Value = startDate.ToString("yyyy-MM-dd");
                                 row.Cells["EndDateColumn"].Value = endDate.ToString("yyyy-MM-dd");
-                                row.Cells["BudgetColumn"].Value = budget.ToString("C2");
+                                row.Cells["BudgetColumn"].Value = budget.ToString();
                             }
                         }
                     }

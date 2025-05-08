@@ -90,6 +90,7 @@
             this.UpdateTripBtn.TabIndex = 34;
             this.UpdateTripBtn.Text = "Yangilash";
             this.UpdateTripBtn.UseVisualStyleBackColor = false;
+            this.UpdateTripBtn.Click += new System.EventHandler(this.UpdateTripBtn_Click);
             // 
             // label5
             // 
@@ -148,6 +149,7 @@
             this.TripNameComboBox.Name = "TripNameComboBox";
             this.TripNameComboBox.Size = new System.Drawing.Size(274, 33);
             this.TripNameComboBox.TabIndex = 36;
+            this.TripNameComboBox.SelectedIndexChanged += new System.EventHandler(this.TripNameComboBox_SelectedIndexChanged);
             // 
             // UpdateMashurt
             // 
