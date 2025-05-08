@@ -30,12 +30,14 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.ViewMashurtDataGridView = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TripsIDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TripNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndDateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BudgetColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeleteTripBtn = new System.Windows.Forms.Button();
+            this.TripNameTxt = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ViewMashurtDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,66 +55,93 @@
             // 
             this.ViewMashurtDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ViewMashurtDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column1});
+            this.TripsIDColumn,
+            this.TripNameColumn,
+            this.StartDateColumn,
+            this.EndDateColumn,
+            this.BudgetColumn});
             this.ViewMashurtDataGridView.Location = new System.Drawing.Point(34, 80);
             this.ViewMashurtDataGridView.Name = "ViewMashurtDataGridView";
             this.ViewMashurtDataGridView.RowHeadersWidth = 51;
             this.ViewMashurtDataGridView.RowTemplate.Height = 24;
-            this.ViewMashurtDataGridView.Size = new System.Drawing.Size(861, 431);
+            this.ViewMashurtDataGridView.Size = new System.Drawing.Size(861, 402);
             this.ViewMashurtDataGridView.TabIndex = 27;
+            this.ViewMashurtDataGridView.SelectionChanged += new System.EventHandler(this.ViewMashurtDataGridView_SelectionChanged);
             // 
-            // Column2
+            // TripsIDColumn
             // 
-            this.Column2.HeaderText = "ID";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 50;
+            this.TripsIDColumn.HeaderText = "ID";
+            this.TripsIDColumn.MinimumWidth = 6;
+            this.TripsIDColumn.Name = "TripsIDColumn";
+            this.TripsIDColumn.Width = 50;
             // 
-            // Column3
+            // TripNameColumn
             // 
-            this.Column3.HeaderText = "Sayohat nomi";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 250;
+            this.TripNameColumn.HeaderText = "Sayohat nomi";
+            this.TripNameColumn.MinimumWidth = 6;
+            this.TripNameColumn.Name = "TripNameColumn";
+            this.TripNameColumn.Width = 250;
             // 
-            // Column4
+            // StartDateColumn
             // 
-            this.Column4.HeaderText = "Boshlanish sana";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 150;
+            this.StartDateColumn.HeaderText = "Boshlanish sana";
+            this.StartDateColumn.MinimumWidth = 6;
+            this.StartDateColumn.Name = "StartDateColumn";
+            this.StartDateColumn.Width = 200;
             // 
-            // Column5
+            // EndDateColumn
             // 
-            this.Column5.HeaderText = "Tugash sana";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 150;
+            this.EndDateColumn.HeaderText = "Tugash sana";
+            this.EndDateColumn.MinimumWidth = 6;
+            this.EndDateColumn.Name = "EndDateColumn";
+            this.EndDateColumn.Width = 200;
             // 
-            // Column6
+            // BudgetColumn
             // 
-            this.Column6.HeaderText = "Byujet";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
+            this.BudgetColumn.HeaderText = "Byujet";
+            this.BudgetColumn.MinimumWidth = 6;
+            this.BudgetColumn.Name = "BudgetColumn";
+            this.BudgetColumn.Width = 150;
             // 
-            // Column1
+            // DeleteTripBtn
             // 
-            this.Column1.HeaderText = "O\'chirish";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
+            this.DeleteTripBtn.BackColor = System.Drawing.Color.DarkRed;
+            this.DeleteTripBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteTripBtn.ForeColor = System.Drawing.Color.White;
+            this.DeleteTripBtn.Location = new System.Drawing.Point(771, 489);
+            this.DeleteTripBtn.Name = "DeleteTripBtn";
+            this.DeleteTripBtn.Size = new System.Drawing.Size(125, 36);
+            this.DeleteTripBtn.TabIndex = 42;
+            this.DeleteTripBtn.Text = "O\'chirish";
+            this.DeleteTripBtn.UseVisualStyleBackColor = false;
+            this.DeleteTripBtn.Click += new System.EventHandler(this.DeleteTripBtn_Click);
+            // 
+            // TripNameTxt
+            // 
+            this.TripNameTxt.AutoSize = true;
+            this.TripNameTxt.Location = new System.Drawing.Point(156, 495);
+            this.TripNameTxt.Name = "TripNameTxt";
+            this.TripNameTxt.Size = new System.Drawing.Size(133, 25);
+            this.TripNameTxt.TabIndex = 41;
+            this.TripNameTxt.Text = "Tanlanmagan";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(35, 495);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(115, 25);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Sayohatchi ";
             // 
             // ViewMashurt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 581);
+            this.Controls.Add(this.DeleteTripBtn);
+            this.Controls.Add(this.TripNameTxt);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.ViewMashurtDataGridView);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -131,11 +160,13 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView ViewMashurtDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TripsIDColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TripNameColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartDateColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EndDateColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BudgetColumn;
+        private System.Windows.Forms.Button DeleteTripBtn;
+        private System.Windows.Forms.Label TripNameTxt;
+        private System.Windows.Forms.Label label2;
     }
 }
