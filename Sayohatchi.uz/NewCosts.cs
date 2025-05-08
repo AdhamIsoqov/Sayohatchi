@@ -31,7 +31,7 @@ namespace Sayohatchi.uz
                 using (SqlConnection connection = new SqlConnection(conn))
                 {
                     connection.Open();
-                    MessageBox.Show("Ulanish muvaffaqiyatli!");
+                    // MessageBox.Show("Ulanish muvaffaqiyatli!");
                     using (SqlCommand cmd = new SqlCommand("SELECT id, trip_name FROM trips", connection))
                     {
                         SqlDataAdapter da = new SqlDataAdapter(cmd);

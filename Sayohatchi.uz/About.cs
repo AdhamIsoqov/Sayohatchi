@@ -30,7 +30,7 @@ namespace Sayohatchi.uz
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    MessageBox.Show("Ulanish muvaffaqiyatli!");
+                    // MessageBox.Show("Ulanish muvaffaqiyatli!");
                 }
             }
             catch (Exception ex)

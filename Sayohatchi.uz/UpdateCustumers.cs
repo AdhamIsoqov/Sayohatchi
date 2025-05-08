@@ -26,7 +26,7 @@ namespace Sayohatchi.uz
                 using (SqlConnection connection = new SqlConnection(conn))
                 {
                     connection.Open();
-                    MessageBox.Show("Ulanish muvaffaqiyatli!");
+                    // MessageBox.Show("Ulanish muvaffaqiyatli!");
                     SqlCommand command = new SqlCommand("SELECT full_name FROM [dbo].[travelers]", connection);
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())

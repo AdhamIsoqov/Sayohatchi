@@ -27,7 +27,7 @@ namespace Sayohatchi.uz
                 using (SqlConnection connection = new SqlConnection(conn))
                 {
                     connection.Open();
-                    MessageBox.Show("Ulanish muvaffaqiyatli!");
+                    // MessageBox.Show("Ulanish muvaffaqiyatli!");
                     LoadTripsData();
                 }
             }
