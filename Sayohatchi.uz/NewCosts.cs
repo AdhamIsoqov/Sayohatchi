@@ -31,9 +31,7 @@ namespace Sayohatchi.uz
                 using (SqlConnection connection = new SqlConnection(conn))
                 {
                     connection.Open();
-
                     MessageBox.Show("Ulanish muvaffaqiyatli!");
-
                     using (SqlCommand cmd = new SqlCommand("SELECT id, trip_name FROM trips", connection))
                     {
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -44,7 +42,6 @@ namespace Sayohatchi.uz
                         TripName.ValueMember = "id";
                         TripName.SelectedIndex = -1;
                     }
-
                     using (SqlCommand cmd = new SqlCommand("SELECT id, full_name FROM travelers", connection))
                     {
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -55,6 +52,8 @@ namespace Sayohatchi.uz
                         TravelersFISH.ValueMember = "id";
                         TravelersFISH.SelectedIndex = -1;
                     }
+                    TripsBudget.Text = "Tanlanmagan";
+                    ExpenseAmount.Text = "Tanlanmagan";
                 }
             }
             catch (Exception ex)
@@ -69,52 +68,71 @@ namespace Sayohatchi.uz
                 using (SqlConnection connection = new SqlConnection(conn))
                 {
                     connection.Open();
-
                     int? selectedTripId = TripName.SelectedValue as int?;
                     int? selectedTravelerId = TravelersFISH.SelectedValue as int?;
-
-                    StringBuilder query = new StringBuilder(@"
-                        SELECT 
-                            t.trip_name,
-                            tr.full_name,
-                            e.expense_name,
-                            e.expense_amount
-                        FROM trip_expenses e
-                        INNER JOIN trips t ON e.trip_id = t.id
-                        INNER JOIN travelers tr ON e.traveler_id = tr.id
-                        WHERE 1=1");
-
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = connection;
-
-                    if (selectedTripId.HasValue)
+                    if (!selectedTripId.HasValue)
                     {
-                        query.Append(" AND e.trip_id = @tripId");
-                        cmd.Parameters.AddWithValue("@tripId", selectedTripId.Value);
+                        TripsBudget.Text = "Tanlanmagan";
+                        ExpenseAmount.Text = "Tanlanmagan";
                     }
-
-                    if (selectedTravelerId.HasValue)
+                    else
                     {
-                        query.Append(" AND e.traveler_id = @travelerId");
-                        cmd.Parameters.AddWithValue("@travelerId", selectedTravelerId.Value);
-                    }
+                        StringBuilder query = new StringBuilder(@"
+                    SELECT 
+                        t.trip_name,
+                        tr.full_name,
+                        e.expense_name,
+                        e.expense_amount
+                    FROM trip_expenses e
+                    INNER JOIN trips t ON e.trip_id = t.id
+                    INNER JOIN travelers tr ON e.traveler_id = tr.id
+                    WHERE 1=1");
 
-                    cmd.CommandText = query.ToString();
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.Connection = connection;
 
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
+                        if (selectedTripId.HasValue)
+                        {
+                            query.Append(" AND e.trip_id = @tripId");
+                            cmd.Parameters.AddWithValue("@tripId", selectedTripId.Value);
+                        }
 
-                    CostsDataGridView.Rows.Clear();
+                        if (selectedTravelerId.HasValue)
+                        {
+                            query.Append(" AND e.traveler_id = @travelerId");
+                            cmd.Parameters.AddWithValue("@travelerId", selectedTravelerId.Value);
+                        }
 
-                    foreach (DataRow row in dt.Rows)
-                    {
-                        CostsDataGridView.Rows.Add(
-                            row["trip_name"].ToString(),
-                            row["full_name"].ToString(),
-                            row["expense_name"].ToString(),
-                            row["expense_amount"].ToString()
-                        );
+                        cmd.CommandText = query.ToString();
+
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
+                        CostsDataGridView.Rows.Clear();
+
+                        decimal totalExpenses = 0;
+
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            CostsDataGridView.Rows.Add(
+                                row["trip_name"].ToString(),
+                                row["full_name"].ToString(),
+                                row["expense_name"].ToString(),
+                                row["expense_amount"].ToString()
+                            );
+                            totalExpenses += Convert.ToDecimal(row["expense_amount"]);
+                        }
+                        string budgetQuery = "SELECT budget FROM trips WHERE id = @tripId";
+                        SqlCommand budgetCmd = new SqlCommand(budgetQuery, connection);
+                        budgetCmd.Parameters.AddWithValue("@tripId", selectedTripId.Value);
+                        var budget = budgetCmd.ExecuteScalar();
+                        if (budget != DBNull.Value)
+                        {
+                            TripsBudget.Text = budget.ToString();
+                        }
+
+                        ExpenseAmount.Text = totalExpenses.ToString("F2"); 
                     }
                 }
             }
@@ -123,6 +141,8 @@ namespace Sayohatchi.uz
                 MessageBox.Show("Ma'lumotlarni yuklashda xatolik: " + ex.Message);
             }
         }
+
+
         private void AddNewCostBtn_Click(object sender, EventArgs e)
         {
             
@@ -136,6 +156,11 @@ namespace Sayohatchi.uz
         private void TravelersFISH_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadCostsDataGridView();
+        }
+
+        private void CostsDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

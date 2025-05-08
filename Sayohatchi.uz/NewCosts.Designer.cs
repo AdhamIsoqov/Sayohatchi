@@ -35,10 +35,6 @@
             this.TravelersFISH = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.CostsDataGridView = new System.Windows.Forms.DataGridView();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.TripsBudget = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,11 +44,16 @@
             this.AddNewCostBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.ExpenseNameTxt = new System.Windows.Forms.TextBox();
+            this.ExpenseAmountNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.refreshTimer = new System.Windows.Forms.Timer(this.components);
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExpenseIdColum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.CostsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExpenseAmountNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -108,41 +109,15 @@
             this.Column3,
             this.Column4,
             this.Column1,
-            this.Column2});
+            this.Column2,
+            this.ExpenseIdColum});
             this.CostsDataGridView.Location = new System.Drawing.Point(66, 156);
             this.CostsDataGridView.Name = "CostsDataGridView";
             this.CostsDataGridView.RowHeadersWidth = 51;
             this.CostsDataGridView.RowTemplate.Height = 24;
             this.CostsDataGridView.Size = new System.Drawing.Size(814, 259);
             this.CostsDataGridView.TabIndex = 21;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Sayohat nomi";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 225;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Sayohatchi ismi";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 225;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Xarajat Nomi";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 385;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Xarajat summasi";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 175;
+            this.CostsDataGridView.SelectionChanged += new System.EventHandler(this.CostsDataGridView_SelectionChanged);
             // 
             // label4
             // 
@@ -235,27 +210,63 @@
             this.label7.TabIndex = 43;
             this.label7.Text = "Xarajat summasi";
             // 
-            // textBox1
+            // ExpenseNameTxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(199, 439);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(264, 30);
-            this.textBox1.TabIndex = 44;
+            this.ExpenseNameTxt.Location = new System.Drawing.Point(199, 439);
+            this.ExpenseNameTxt.Name = "ExpenseNameTxt";
+            this.ExpenseNameTxt.Size = new System.Drawing.Size(264, 30);
+            this.ExpenseNameTxt.TabIndex = 44;
             // 
-            // numericUpDown1
+            // ExpenseAmountNumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(633, 437);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(247, 30);
-            this.numericUpDown1.TabIndex = 45;
+            this.ExpenseAmountNumericUpDown.Location = new System.Drawing.Point(633, 437);
+            this.ExpenseAmountNumericUpDown.Name = "ExpenseAmountNumericUpDown";
+            this.ExpenseAmountNumericUpDown.Size = new System.Drawing.Size(247, 30);
+            this.ExpenseAmountNumericUpDown.TabIndex = 45;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Sayohat nomi";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 225;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Sayohatchi ismi";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 225;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Xarajat Nomi";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 385;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Xarajat summasi";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 175;
+            // 
+            // ExpenseIdColum
+            // 
+            this.ExpenseIdColum.HeaderText = "ID";
+            this.ExpenseIdColum.MinimumWidth = 6;
+            this.ExpenseIdColum.Name = "ExpenseIdColum";
+            this.ExpenseIdColum.Visible = false;
+            this.ExpenseIdColum.Width = 125;
             // 
             // NewCosts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 581);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ExpenseAmountNumericUpDown);
+            this.Controls.Add(this.ExpenseNameTxt);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.AddNewCostBtn);
@@ -278,7 +289,7 @@
             this.Text = "NewCosts";
             this.Load += new System.EventHandler(this.NewCosts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CostsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExpenseAmountNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,12 +312,13 @@
         private System.Windows.Forms.Button AddNewCostBtn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.TextBox ExpenseNameTxt;
+        private System.Windows.Forms.NumericUpDown ExpenseAmountNumericUpDown;
+        private System.Windows.Forms.Timer refreshTimer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.Timer refreshTimer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ExpenseIdColum;
     }
 }
