@@ -106,7 +106,7 @@ namespace Sayohatchi.uz
 
         private void button8_Click(object sender, EventArgs e)
         {
-            ViewCosts frm = new ViewCosts();
+            ViewCostsDataGridView frm = new ViewCostsDataGridView();
             panel3.Controls.Clear();
             frm.TopLevel = false;
             panel3.Controls.Add(frm);

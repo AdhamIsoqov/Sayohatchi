@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Sayohatchi.uz
 {
-    public partial class ViewCosts : Form
+    public partial class ViewCostsDataGridView : Form
     {
-        public ViewCosts()
+        public ViewCostsDataGridView()
         {
             InitializeComponent();
         }

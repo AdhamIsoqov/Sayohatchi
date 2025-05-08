@@ -1,6 +1,6 @@
 ﻿namespace Sayohatchi.uz
 {
-    partial class ViewCosts
+    partial class ViewCostsDataGridView
     {
         /// <summary>
         /// Required designer variable.
@@ -126,7 +126,7 @@
             this.Column1.Name = "Column1";
             this.Column1.Width = 125;
             // 
-            // ViewCosts
+            // ViewCostsDataGridView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -136,7 +136,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "ViewCosts";
+            this.Name = "ViewCostsDataGridView";
             this.Text = "ViewCosts";
             this.Load += new System.EventHandler(this.ViewCosts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

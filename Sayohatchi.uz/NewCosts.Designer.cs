@@ -166,6 +166,7 @@
             this.DeleteCostBtn.TabIndex = 38;
             this.DeleteCostBtn.Text = "O\'chirish";
             this.DeleteCostBtn.UseVisualStyleBackColor = false;
+            this.DeleteCostBtn.Click += new System.EventHandler(this.DeleteCostBtn_Click);
             // 
             // UpdateCostBtn
             // 
@@ -178,6 +179,7 @@
             this.UpdateCostBtn.TabIndex = 40;
             this.UpdateCostBtn.Text = "Yangilash";
             this.UpdateCostBtn.UseVisualStyleBackColor = false;
+            this.UpdateCostBtn.Click += new System.EventHandler(this.UpdateCostBtn_Click);
             // 
             // AddNewCostBtn
             // 
@@ -219,7 +221,18 @@
             // 
             // ExpenseAmountNumericUpDown
             // 
+            this.ExpenseAmountNumericUpDown.DecimalPlaces = 2;
+            this.ExpenseAmountNumericUpDown.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.ExpenseAmountNumericUpDown.Location = new System.Drawing.Point(633, 437);
+            this.ExpenseAmountNumericUpDown.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.ExpenseAmountNumericUpDown.Name = "ExpenseAmountNumericUpDown";
             this.ExpenseAmountNumericUpDown.Size = new System.Drawing.Size(247, 30);
             this.ExpenseAmountNumericUpDown.TabIndex = 45;
@@ -243,7 +256,7 @@
             this.Column1.HeaderText = "Xarajat Nomi";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 385;
+            this.Column1.Width = 185;
             // 
             // Column2
             // 
@@ -257,7 +270,6 @@
             this.ExpenseIdColum.HeaderText = "ID";
             this.ExpenseIdColum.MinimumWidth = 6;
             this.ExpenseIdColum.Name = "ExpenseIdColum";
-            this.ExpenseIdColum.Visible = false;
             this.ExpenseIdColum.Width = 125;
             // 
             // NewCosts

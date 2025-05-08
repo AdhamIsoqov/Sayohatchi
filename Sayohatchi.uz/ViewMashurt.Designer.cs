@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ViewMashurtDataGridView = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewMashurtDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -49,22 +49,22 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Sayohatchilarni ko\'rish";
             // 
-            // dataGridView1
+            // ViewMashurtDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ViewMashurtDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ViewMashurtDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column2,
             this.Column3,
             this.Column4,
             this.Column5,
             this.Column6,
             this.Column1});
-            this.dataGridView1.Location = new System.Drawing.Point(34, 80);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(861, 431);
-            this.dataGridView1.TabIndex = 27;
+            this.ViewMashurtDataGridView.Location = new System.Drawing.Point(34, 80);
+            this.ViewMashurtDataGridView.Name = "ViewMashurtDataGridView";
+            this.ViewMashurtDataGridView.RowHeadersWidth = 51;
+            this.ViewMashurtDataGridView.RowTemplate.Height = 24;
+            this.ViewMashurtDataGridView.Size = new System.Drawing.Size(861, 431);
+            this.ViewMashurtDataGridView.TabIndex = 27;
             // 
             // Column2
             // 
@@ -113,7 +113,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 581);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.ViewMashurtDataGridView);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -121,7 +121,7 @@
             this.Name = "ViewMashurt";
             this.Text = "ViewMashurt";
             this.Load += new System.EventHandler(this.ViewMashurt_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewMashurtDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,7 +130,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ViewMashurtDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
