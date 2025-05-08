@@ -31,7 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.FISHtxt = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -39,11 +38,9 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.AddCustumersBtn = new System.Windows.Forms.Button();
-            this.AgeTxtNumeric = new System.Windows.Forms.NumericUpDown();
             this.Phonetxtmasked = new System.Windows.Forms.MaskedTextBox();
             this.Emailtxt = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AgeTxtNumeric)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -59,7 +56,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(181, 156);
+            this.label2.Location = new System.Drawing.Point(181, 192);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 25);
             this.label2.TabIndex = 1;
@@ -67,19 +64,10 @@
             // 
             // FISHtxt
             // 
-            this.FISHtxt.Location = new System.Drawing.Point(361, 153);
+            this.FISHtxt.Location = new System.Drawing.Point(361, 189);
             this.FISHtxt.Name = "FISHtxt";
             this.FISHtxt.Size = new System.Drawing.Size(333, 30);
             this.FISHtxt.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(181, 191);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 25);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Yosh";
             // 
             // label4
             // 
@@ -153,18 +141,6 @@
             this.AddCustumersBtn.UseVisualStyleBackColor = false;
             this.AddCustumersBtn.Click += new System.EventHandler(this.AddCustumersBtn_Click);
             // 
-            // AgeTxtNumeric
-            // 
-            this.AgeTxtNumeric.Location = new System.Drawing.Point(361, 189);
-            this.AgeTxtNumeric.Maximum = new decimal(new int[] {
-            120,
-            0,
-            0,
-            0});
-            this.AgeTxtNumeric.Name = "AgeTxtNumeric";
-            this.AgeTxtNumeric.Size = new System.Drawing.Size(333, 30);
-            this.AgeTxtNumeric.TabIndex = 12;
-            // 
             // Phonetxtmasked
             // 
             this.Phonetxtmasked.Location = new System.Drawing.Point(361, 225);
@@ -187,13 +163,11 @@
             this.ClientSize = new System.Drawing.Size(925, 581);
             this.Controls.Add(this.Emailtxt);
             this.Controls.Add(this.Phonetxtmasked);
-            this.Controls.Add(this.AgeTxtNumeric);
             this.Controls.Add(this.AddCustumersBtn);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.FISHtxt);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -205,7 +179,6 @@
             this.Load += new System.EventHandler(this.NewCustumers_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.AgeTxtNumeric)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,7 +189,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox FISHtxt;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -224,7 +196,6 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button AddCustumersBtn;
-        private System.Windows.Forms.NumericUpDown AgeTxtNumeric;
         private System.Windows.Forms.MaskedTextBox Phonetxtmasked;
         private System.Windows.Forms.TextBox Emailtxt;
     }

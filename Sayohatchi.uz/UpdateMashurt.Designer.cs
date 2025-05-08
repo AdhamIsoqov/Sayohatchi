@@ -53,6 +53,12 @@
             // 
             // BudgetNumeric
             // 
+            this.BudgetNumeric.DecimalPlaces = 2;
+            this.BudgetNumeric.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.BudgetNumeric.Location = new System.Drawing.Point(413, 298);
             this.BudgetNumeric.Maximum = new decimal(new int[] {
             10000000,

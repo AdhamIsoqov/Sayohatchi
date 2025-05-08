@@ -22,7 +22,6 @@ namespace Sayohatchi.uz
         private void AddCustumersBtn_Click(object sender, EventArgs e)
         {
             string fullName = FISHtxt.Text;
-            int age = (int)AgeTxtNumeric.Value;
             string phoneNumber = Phonetxtmasked.Text;
             string email = Emailtxt.Text;
             string gender = radioButton1.Checked ? "Erkak" : "Ayol";
