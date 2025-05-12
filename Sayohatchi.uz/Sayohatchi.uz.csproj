@@ -124,12 +124,6 @@
     <Compile Include="Singup.Designer.cs">
       <DependentUpon>Singup.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateCosts.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UpdateCosts.Designer.cs">
-      <DependentUpon>UpdateCosts.cs</DependentUpon>
-    </Compile>
     <Compile Include="UpdateCustumers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,9 +183,6 @@
     </Compile>
     <EmbeddedResource Include="Singup.resx">
       <DependentUpon>Singup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UpdateCosts.resx">
-      <DependentUpon>UpdateCosts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateCustumers.resx">
       <DependentUpon>UpdateCustumers.cs</DependentUpon>
