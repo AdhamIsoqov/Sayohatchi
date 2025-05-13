@@ -136,12 +136,6 @@
     <Compile Include="UpdateMashurt.Designer.cs">
       <DependentUpon>UpdateMashurt.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewCosts.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ViewCosts.Designer.cs">
-      <DependentUpon>ViewCosts.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewCustumers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,9 +183,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateMashurt.resx">
       <DependentUpon>UpdateMashurt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewCosts.resx">
-      <DependentUpon>ViewCosts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewCustumers.resx">
       <DependentUpon>ViewCustumers.cs</DependentUpon>

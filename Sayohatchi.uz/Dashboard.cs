@@ -104,26 +104,6 @@ namespace Sayohatchi.uz
             frm.Show();
         }
 
-        private void button8_Click(object sender, EventArgs e)
-        {
-            ViewCostsDataGridView frm = new ViewCostsDataGridView();
-            panel3.Controls.Clear();
-            frm.TopLevel = false;
-            panel3.Controls.Add(frm);
-            frm.BringToFront();
-            frm.Show();
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            UpdateCosts frm = new UpdateCosts();
-            panel3.Controls.Clear();
-            frm.TopLevel = false;
-            panel3.Controls.Add(frm);
-            frm.BringToFront();
-            frm.Show();
-        }
-
         private void button10_Click(object sender, EventArgs e)
         {
             About frm = new About();
